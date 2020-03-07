@@ -113,7 +113,9 @@
 
         static ConsoleExtensions()
         {
+#if NETSTANDARD || NETCOREAPP
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+#endif
             {
                 var iStdOut =   GetStdHandle(STD_OUTPUT_HANDLE);
 
